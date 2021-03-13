@@ -1,0 +1,18 @@
+# local note pad
+/notes
+
+# Gradle output
+/build/
+/.gradle/
+
+# Visual Studio Code
+/.vscode/
+
+# IntelliJ
+/.idea/
+
+# Eclipse
+/.classpath
+/.project
+/.settings/
+/bin/

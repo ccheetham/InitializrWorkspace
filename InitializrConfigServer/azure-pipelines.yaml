@@ -1,0 +1,26 @@
+trigger:
+  - dev
+
+variables:
+  - name: major
+    value: 0
+  - name: minor
+    value: 1
+  - name: micro
+    value: 0
+
+name: $(major).$(minor).$(micro)-$(Rev:r)
+
+stages:
+  - stage: assemble
+    displayName: Assemble
+    jobs:
+      - job: build
+        displayName: Build
+        pool:
+          vmImage: ubuntu-latest
+        steps:
+          - task: Gradle@1
+            displayName: Gradle Build
+            inputs:
+              jdkVersionOption: 1.11

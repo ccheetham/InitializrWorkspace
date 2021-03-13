@@ -1,0 +1,10 @@
+---
+applications:
+- name: initializr-config-server
+  buildpacks:
+    - https://github.com/cloudfoundry/java-buildpack.git#v4.32.1
+  path: ../../build/libs/Steeltoe.InitializrConfigServer-0.1.0-SNAPSHOT.jar
+  memory: 1024M
+  env:
+    JBP_CONFIG_JAVA_MAIN: '{ arguments: "--logging.level.org.springframework.web=debug" }'
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'

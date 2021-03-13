@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: initializr-config-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: initializr-config-server
+  template:
+    metadata:
+      labels:
+        app: initializr-config-server
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: initializr-config-server
+        image: localhost:5000/initializr-config-server
+        args: ["--debug"]
+        ports:
+        - containerPort: 8888
