@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:ccheetham/InitializrApi
+	branch = dev
+	commit = 505014c5ae85821e4bae62b3717a87bdc0fd3be0
+	parent = d62889efb242ceef1b4981a9e61e414021532724
+	method = merge
+	cmdver = 0.4.3
