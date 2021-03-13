@@ -1,0 +1,126 @@
+{
+  "name": {
+    "type": "text",
+    "default": "Dev"
+  },
+  "namespace": {
+    "type": "text",
+    "default": "DevNamespace"
+  },
+  "applicationName": {
+    "type": "text",
+    "default": "DevApplication"
+  },
+  "description": {
+    "type": "text",
+    "default": "Development project application"
+  },
+  "steeltoeVersion": {
+    "default": "3.0.2",
+    "values": [
+      {
+        "id": "3.0.2",
+        "name": "Steeltoe 3.0.2 Maintenance Release"
+      },
+      {
+        "id": "2.5.2",
+        "name": "Steeltoe 2.5.2 Maintenance Release"
+      }
+    ],
+    "type": "single-select"
+  },
+  "dotNetFramework": {
+    "default": "netcoreapp3.1",
+    "values": [
+      {
+        "id": "net5.0",
+        "name": ".NET 5.0"
+      },
+      {
+        "id": "netcoreapp3.1",
+        "name": ".NET Core 3.1"
+      },
+      {
+        "id": "netcoreapp2.1",
+        "name": ".NET Core 2.1"
+      }
+    ],
+    "type": "single-select"
+  },
+  "dotNetTemplate": {
+    "default": "webapi",
+    "values": [
+      {
+        "id": "webapi",
+        "name": "ASP.NET Core Web API"
+      }
+    ],
+    "type": "single-select"
+  },
+  "language": {
+    "default": "csharp",
+    "values": [
+      {
+        "id": "csharp",
+        "name": "C#"
+      }
+    ],
+    "type": "single-select"
+  },
+  "packaging": {
+    "default": "zip",
+    "values": [
+      {
+        "id": "zip",
+        "name": "zip"
+      }
+    ],
+    "type": "single-select"
+  },
+  "dependencies": {
+    "type": "hierarchical-multi-select",
+    "values": [
+      {
+        "name": "Focus Group",
+        "values": [
+          {
+            "description": "Add this dependency",
+            "id": "focus",
+            "name": "Focus Dependency",
+            "steeltoeVersionRange": "[2.4.0,3.0.0)",
+            "dotNetFrameworkRange": "netcoreapp3.1"
+          }
+        ]
+      },
+      {
+        "name": "Grid Group",
+        "values": [
+          {
+            "description": "Add dependency 0.0",
+            "id": "0_0",
+            "name": "Dependency 0.0"
+          },
+          {
+            "description": "Add dependency 1.0",
+            "id": "1_0",
+            "name": "Dependency 1.0",
+            "steeltoeVersionRange": "3.0.0"
+          },
+          {
+            "description": "Add dependency 0.1",
+            "id": "0_1",
+            "name": "Dependency 0.1",
+            "dotNetFrameworkRange": "netcoreapp3.0"
+          },
+          {
+            "description": "Add dependency 1.1",
+            "id": "1_1",
+            "name": "Dependency 1.1",
+            "steeltoeVersionRange": "[2.4.0,3.0.0)",
+            "dotNetFrameworkRange": "[netcoreapp2.1,netcoreapp3.0)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+trigger:
+  - dev
+
+variables:
+  - name: major
+    value: 1
+  - name: minor
+    value: 0
+  - name: micro
+    value: 3
+
+name: $(major).$(minor).$(micro)-$(Rev:r)
+
+stages:
+  - stage: assemble
+    displayName: Assemble
+    jobs:
+      - job: build
+        displayName: Build
+        pool:
+          vmImage: ubuntu-latest
+        steps:
+          - task: NodeTool@0
+            displayName: Set Node Version
+            inputs:
+              versionSpec: 10.x
+          - script: yarn install
+            displayName: yarn install
+            workingDirectory: start-client
+          - script: yarn build
+            displayName: yarn build
+            workingDirectory: start-client
