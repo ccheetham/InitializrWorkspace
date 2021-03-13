@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:ccheetham/InitializrConfig
+	branch = dev
+	commit = eb0bbea6f05bdbf1fade51c86cb8cff54e3d2b65
+	parent = 6bb18bccd53711a266130668b322b741488f8f50
+	method = merge
+	cmdver = 0.4.3
