@@ -38,6 +38,10 @@ springBoot {
     buildInfo ()
 }
 
+gitProperties {
+    failOnNoGitDirectory = false
+}
+
 bootJar {
     manifest {
         attributes("Implementation-Title": "Steeltoe InitializrConfigServer")
