@@ -6,7 +6,7 @@
 [subrepo]
 	remote = git@github.com:ccheetham/InitializrApi
 	branch = dev
-	commit = 49f579cfc01bf2c27eeb16ec81f55c4a51b021fd
-	parent = a1a00413c0a82009e2518bd7e0263c1a2c4a5c9d
+	commit = b48a1c2e90abb15b52b825f8abe9a1a4db1228f7
+	parent = 551b1fa8a07bcd7d39ba5b579fe7a58b8e291363
 	method = merge
 	cmdver = 0.4.3
