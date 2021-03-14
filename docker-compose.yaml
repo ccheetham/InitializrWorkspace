@@ -10,7 +10,7 @@ services:
     build: InitializrApi
     entrypoint: ["./wait-for-it", "initializr-config-server:80", "--", "dotnet", "Steeltoe.InitializrApi.dll"]
     environment:
-      DOTNET_ENVIRONMENT: Development
+      DOTNET_ENVIRONMENT: Docker
       SPRING__CLOUD__CONFIG__URI: http://initializr-config-server/
       SPRING__CLOUD__CONFIG__LABEL: dev
   initializr-web:
