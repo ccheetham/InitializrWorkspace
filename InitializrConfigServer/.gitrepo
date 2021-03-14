@@ -6,7 +6,7 @@
 [subrepo]
 	remote = git@github.com:ccheetham/InitializrConfigServer
 	branch = dev
-	commit = bc4f0d7b8fd54c8f0ed14de3b2852d253ac6d5b0
-	parent = d097838d9c9a4fbfb146d20c2351d15d2d2a7b93
+	commit = 6cad87944d713aeebf84357b25b878880ef874e7
+	parent = 05b88619be857a53627963ea24a2ef86285573a0
 	method = merge
 	cmdver = 0.4.3
