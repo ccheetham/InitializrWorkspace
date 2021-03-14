@@ -6,7 +6,7 @@
 [subrepo]
 	remote = git@github.com:ccheetham/InitializrWeb
 	branch = dev
-	commit = 40c5797a30e4fdf61251edaec542b98cc576f5b8
-	parent = 9352c8782c11498056013f8401d171b7a9c419b9
+	commit = ddc68339eb68917c5336d6a5f6a8b9ccbeaa7b46
+	parent = 862ef070e305340ce65b175bf997c5c56b21a5d4
 	method = merge
 	cmdver = 0.4.3
