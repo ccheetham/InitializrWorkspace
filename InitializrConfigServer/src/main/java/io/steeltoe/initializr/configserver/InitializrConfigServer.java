@@ -35,7 +35,13 @@ public class InitializrConfigServer implements ApplicationContextAware {
 
     @Override
     public void setApplicationContext(ApplicationContext context) throws BeansException {
-        BuildProperties buildProperties = context.getBean(BuildProperties.class);
+        BuildProperties buildProperties = null;
+        try {
+            buildProperties = context.getBean(BuildProperties.class);
+        } catch (BeansException e) {
+            buildProperties = new BuildProperties(new Properties());
+        }
+
         InputStream pin = getClass().getClassLoader().getResourceAsStream("git.properties");
         Properties gitProperties = new Properties();
         if (pin != null) {
@@ -46,11 +52,14 @@ public class InitializrConfigServer implements ApplicationContextAware {
                 logger.warn("IO error processing Git properties: {}", e.getLocalizedMessage());
             }
         }
-        logger.info("{}, version {} [{}]", buildProperties.getName(), buildProperties.getVersion(), gitProperties.getOrDefault("git.commit.id", "unknown"));
+        logger.info("{}, version {} [{}]", buildProperties.getName(), buildProperties.getVersion(),
+                gitProperties.getOrDefault("git.commit.id", "unknown"));
         Package springPkg = EnableConfigServer.class.getPackage();
         logger.info("{}, version {}", springPkg.getImplementationTitle(), springPkg.getImplementationVersion());
-        logger.info("{}: {}", "spring.cloud.config.server.git.uri", env.getProperty("spring.cloud.config.server.git.uri"));
+        logger.info("{}: {}", "spring.cloud.config.server.git.uri",
+                env.getProperty("spring.cloud.config.server.git.uri"));
         logger.info("{}: {}", "spring.profiles.active", env.getProperty("spring.profiles.active"));
-        logger.info("{}: {}", "spring.cloud.config.server.native.searchLocations", env.getProperty("spring.cloud.config.server.native.searchLocations"));
+        logger.info("{}: {}", "spring.cloud.config.server.native.searchLocations",
+                env.getProperty("spring.cloud.config.server.native.searchLocations"));
     }
 }
